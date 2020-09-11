@@ -18,6 +18,13 @@ import { setCurrentUser } from './redux/user/user.actions';
 
 
 class App extends React.Component {
+    constructor() {
+        super();
+    
+        this.state = {
+          currentUser: null
+        };
+      }
   
     unsubscribeFromAuth = null;
 
@@ -47,7 +54,7 @@ class App extends React.Component {
 
     render() {
         return <div>
-        <Header/>
+        <Header currentUser = {this.state.currentUser}/>
         <Switch>
 
             <Route exact path = '/' component = {HomePage}/>
